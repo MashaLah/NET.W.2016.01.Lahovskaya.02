@@ -11,7 +11,6 @@ namespace Task1
         /// <summary>
         /// Finds the smallest array index, for which sum of left elements equals sum of right elements.
         /// </summary>
-        /// <param name="array"></param>
         /// <returns>Index if found, -1 if not found.</returns>
         public static int Find(int[] array)
         {
