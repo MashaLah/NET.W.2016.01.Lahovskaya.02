@@ -9,6 +9,9 @@ namespace Task3
 {
     public static class InsertBytes
     {
+        /// <summary>
+        /// Inserts secondNumber into firstNumber from firstIndex byte position to secondIndex byte position.
+        /// </summary>
         public static int Insert(int firstNumber, int secondNumber, int firstIndex, int secondIndex)
         {
             BitArray arrFirst = new BitArray(new int[] { firstNumber });
