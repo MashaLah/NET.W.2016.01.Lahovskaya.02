@@ -14,15 +14,23 @@ namespace Task3UI
     {
         static void Main(string[] args)
         {
-            int a = InsertBytes.Insert(8, 15, 0, 0);
+            int a = 8;
+            if(InsertBytes.Insert(ref a, 15, 0, 0))
             Console.WriteLine(a);
-            int b = InsertBytes.Insert(0, 15, 30, 30);
+            int b = 0;
+            if(InsertBytes.Insert(ref b, 15, 30, 30))
             Console.WriteLine(b);
-            int c = InsertBytes.Insert(0, 15, 0, 30);
+            int c = 0;
+            if(InsertBytes.Insert(ref c, 15, 0, 30))
             Console.WriteLine(c);
-            int d = InsertBytes.Insert(15, -15, 0, 4);
+            int d = 15;
+            if(InsertBytes.Insert(ref d, -15, 0, 4))
             Console.WriteLine(d);
-            int e = InsertBytes.Insert(15, int.MaxValue, 3, 5);
+            int e = 15;
+            if(InsertBytes.Insert(ref e, int.MaxValue, 3, 5))
+            Console.WriteLine(e);
+            int f = 8;
+            if(InsertBytes.Insert(ref f, 15, 10, 0))
             Console.WriteLine(e);
             Console.ReadLine();
         }

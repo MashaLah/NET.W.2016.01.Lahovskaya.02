@@ -12,18 +12,25 @@ namespace Task3
         /// <summary>
         /// Inserts secondNumber into firstNumber from firstIndex byte position to secondIndex byte position.
         /// </summary>
-        public static int Insert(int firstNumber, int secondNumber, int firstIndex, int secondIndex)
+        public static bool Insert(ref int firstNumber, int secondNumber, int firstIndex, int secondIndex)
         {
-            BitArray arrFirst = new BitArray(new int[] { firstNumber });
-            BitArray arrSecond = new BitArray(new int[] { secondNumber });
-            for (int j = 0, i = firstIndex; (j < 1 + secondIndex - firstIndex) && (i <= secondIndex); j++, i++)
+            if (firstIndex > secondIndex)
             {
-                if (arrFirst[i] == true || arrSecond[j] == true) arrFirst[i] = true;
+                return false;
             }
-            byte[] byteArr = new byte[32];
-            arrFirst.CopyTo(byteArr,0);
-            int result = BitConverter.ToInt32(byteArr, 0);
-            return result;
+            else
+            {
+                BitArray arrFirst = new BitArray(new int[] { firstNumber });
+                BitArray arrSecond = new BitArray(new int[] { secondNumber });
+                for (int j = 0, i = firstIndex; (j < 1 + secondIndex - firstIndex) && (i <= secondIndex); j++, i++)
+                {
+                    if (arrFirst[i] == true || arrSecond[j] == true) arrFirst[i] = true;
+                }
+                byte[] byteArr = new byte[32];
+                arrFirst.CopyTo(byteArr, 0);
+                firstNumber = BitConverter.ToInt32(byteArr, 0);
+                return true;
+            }
         }
     }
 }
