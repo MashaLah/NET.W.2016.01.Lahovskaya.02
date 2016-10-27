@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <FirstString>xyaabbbccccdefww</FirstString>
+    <SecondString>xxxxyyyyabklmopq</SecondString>
+    <ExpectedResult>abcdefklmopqwxy</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <FirstName>xyaabbbccccdefww</FirstName>
+    <SecondString>null</SecondString>
+    <ExpectedResult>Input string is null or contains not only letters.</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <FirstString>xyaabbbccccdefww</FirstString>
+    <SecondString>123</SecondString>
+    <ExpectedResult>Input string is null or contains not only letters.</ExpectedResult>
+  </TestCase>
+</TestCases>

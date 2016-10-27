@@ -4,9 +4,18 @@ using Task2;
 
 namespace Task2.Tests
 {
-    [TestClass]
+    [TestClass()]
     public class ConcatedStringTests
     {
+        /*public TestContext TestContext { get; set; }
+
+        [DataSource(
+         "Microsoft.VisualStudio.TestTools.DataSource.XML",
+         "|DataDirectory|\\Users.xml",
+         "TestCase",
+         DataAccessMethod.Sequential)]
+        [DeploymentItem("Task2.Tests\\Users.xml")]*/
+
         /// <summary>
         /// A test for MakeString() with valid strings.
         /// </summary>
@@ -17,6 +26,9 @@ namespace Task2.Tests
             string firstStr = "xyaabbbccccdefww";
             string secondStr = "xxxxyyyyabklmopq";
             string expected = "abcdefklmopqwxy";
+            /*string firstStr = Convert.ToString(TestContext.DataRow["FirstString"]);
+            string secondStr = Convert.ToString(TestContext.DataRow["SecondString"]);
+            var expected = Convert.ToString(TestContext.DataRow["ExpectedResult"]);*/
             //act
             string actual = ConcatedString.MakeString(firstStr,secondStr);
             //assert
