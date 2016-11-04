@@ -17,7 +17,7 @@ namespace Task1.Tests
             int[] array = { 1, 2, 3, 4, 3, 2, 1 };
             int expected = 3;
             //act
-            int actual = FindIndex.Find(array);
+            int? actual = FindIndex.Find(array);
             //assert
             Assert.AreEqual(expected,actual);
         }
@@ -26,43 +26,13 @@ namespace Task1.Tests
         /// A test for Find() with not valid array
         /// </summary>
         [TestMethod]
-        public void Find_ArrayOfInt_MinusOne()
+        public void Find_ArrayOfInt_Null()
         {
             //arrange
             int[] array = { 1, 2, 3, 4 };
-            int expected = -1;
+            int? expected = null;
             //act
-            int actual = FindIndex.Find(array);
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// A test for Find() with array is null
-        /// </summary>
-        [TestMethod]
-        public void Find_EmptyArray_MinusOne()
-        {
-            //arrange
-            int[] array = null;
-            int expected = -1;
-            //act
-            int actual = FindIndex.Find(array);
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// A test for Find() with array where length is less than tree
-        /// </summary>
-        [TestMethod]
-        public void Find_ArrayLengthIsLessThanThree_MinusOne()
-        {
-            //arrange
-            int[] array = { 1, 2 };
-            int expected = -1;
-            //act
-            int actual = FindIndex.Find(array);
+            int? actual = FindIndex.Find(array);
             //assert
             Assert.AreEqual(expected, actual);
         }

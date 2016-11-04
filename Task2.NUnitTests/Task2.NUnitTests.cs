@@ -27,36 +27,13 @@ namespace Task2.NUnitTests
             Assert.AreEqual(expected, actual);
         }
 
-        /// <summary>
-        /// A test for MakeString() with one string is null.
-        /// </summary>
-        [Test]
-        public void MakeString_StringIsNull_Message()
+        [TestCase("abc", null)]
+        [TestCase(null,"abc")]
+        [TestCase("abc", "123")]
+        [TestCase("123", "abc")]
+        public void MakeString_InvalidData_Throw(string firstString, string secondString)
         {
-            //arrange
-            string firstStr = "xyaabbbccccdefww";
-            string secondStr = null;
-            string expected = "Input string is null or contains not only letters.";
-            //act
-            string actual = ConcatedString.MakeString(firstStr, secondStr);
-            //assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        /// <summary>
-        /// A test for MakeString() with one string contains not only letters.
-        /// </summary>
-        [Test]
-        public void MakeString_StringContainsNotOnlyLetters_Message()
-        {
-            //arrange
-            string firstStr = "xyaabbbccccdefww";
-            string secondStr = "123";
-            string expected = "Input string is null or contains not only letters.";
-            //act
-            string actual = ConcatedString.MakeString(firstStr, secondStr);
-            //assert
-            Assert.AreEqual(expected, actual);
+            Assert.Throws<ArgumentException>(()=>ConcatedString.MakeString(firstString,secondString));
         }
     }
 }

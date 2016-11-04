@@ -18,31 +18,11 @@ namespace Task3.Tests
             int b = -15;
             int firstInd = 0;
             int secondInd = 4;
-            bool expected = true;
-            int expectedNumber = 31;
+            int expected = 31;
             //act
-            bool actual = InsertBytes.Insert(ref a,b,firstInd,secondInd);
+            int actual = InsertBytes.Insert(a,b,firstInd,secondInd);
             //assert
             Assert.AreEqual(expected,actual);
-            Assert.AreEqual(expectedNumber,a);
-        }
-
-        /// <summary>
-        /// A test for Insert() where firstIndex>secondIndex.
-        /// </summary>
-        [TestMethod]
-        public void Insert_NotValidIndex_False()
-        {
-            //arrange
-            int a = 15;
-            int b = -15;
-            int firstInd = 4;
-            int secondInd = 0;
-            bool expected = false;
-            //act
-            bool actual = InsertBytes.Insert(ref a, b, firstInd, secondInd);
-            //assert
-            Assert.AreEqual(expected, actual);
         }
     }
 }
