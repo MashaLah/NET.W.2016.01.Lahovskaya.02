@@ -17,7 +17,6 @@ namespace Task3
             if (firstIndex > secondIndex)
                 throw new ArgumentException($"{nameof(firstIndex)} is bigger than {nameof(secondIndex)}");
 
-
                 BitArray arrFirst = new BitArray(new int[] { firstNumber });
                 BitArray arrSecond = new BitArray(new int[] { secondNumber });
                 for (int j = 0, i = firstIndex; (j < 1 + secondIndex - firstIndex) && (i <= secondIndex); j++, i++)
